@@ -1,18 +1,17 @@
 package quera;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int numberOfProjects = scanner.nextInt();
         int[] profits = new int[numberOfProjects];
-        for (int i = 0; i<numberOfProjects; i++) {
+        for (int i = 0; i < numberOfProjects; i++) {
             profits[i] = scanner.nextInt();
         }
         int[] capitals = new int[numberOfProjects];
-        for (int i = 0; i<numberOfProjects; i++) {
+        for (int i = 0; i < numberOfProjects; i++) {
             capitals[i] = scanner.nextInt();
         }
         int maximumCapacity = scanner.nextInt();
@@ -25,6 +24,7 @@ public class Main {
 //        System.out.println(Arrays.stream(capitals).boxed().map(String::valueOf).collect(Collectors.joining(" ")));
         System.out.println(findMaximizedCapital(maximumCapacity, initialCapital, profits, capitals));
     }
+
     public static int findMaximizedCapital(int k, int w, int[] profits, int[] capital) {
         int n = profits.length;
         int[][] projects = new int[n][2];
